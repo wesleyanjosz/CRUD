@@ -1,5 +1,5 @@
 <?php
-include_once './includes/header.php';
+require_once './includes/header.php';
 ?>
 
 <div class="row">
@@ -29,5 +29,5 @@ include_once './includes/header.php';
 </div>
 
 <?php
-include_once './includes/footer.php';
+require_once './includes/footer.php';
 ?>

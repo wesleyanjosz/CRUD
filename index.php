@@ -1,10 +1,7 @@
 <?php
-session_start();
-if (isset($_SESSION['msg'])) {
-    echo $_SESSION['msg'];
-}
-include_once './php-action/db-connect.php';
-include_once './includes/header.php';
+require_once './php-action/db-connect.php';
+require_once './includes/header.php';
+require_once './includes/msg.php';
 ?>
 
 <div class="row">
@@ -44,5 +41,5 @@ include_once './includes/header.php';
 </div>
 
 <?php
-include_once './includes/footer.php';
+require_once './includes/footer.php';
 ?>
