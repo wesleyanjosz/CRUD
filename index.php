@@ -1,4 +1,9 @@
 <?php
+session_start();
+if (isset($_SESSION['msg'])) {
+    echo $_SESSION['msg'];
+}
+include_once './php-action/db-connect.php';
 include_once './includes/header.php';
 ?>
 
@@ -15,14 +20,22 @@ include_once './includes/header.php';
                 </tr>
             </thead>
             <tbody>
+                <?php
+                $sql = 'select * from clientes';
+                $result = mysqli_query($connect, $sql);
+                while ($data = mysqli_fetch_array($result)) {
+                ?>
                 <tr>
-                    <td>Wesley</td>
-                    <td>Anjos</td>
-                    <td>wesley@gmail.com</td>
-                    <td>28</td>
+                    <td><?php echo $data['nome']; ?></td>
+                    <td><?php echo $data['sobrenome']; ?></td>
+                    <td><?php echo $data['email']; ?></td>
+                    <td><?php echo $data['idade']; ?></td>
                     <td><a href="" class="btn-floating orange"><i class="material-icons">edit</i></a></td>
                     <td><a href="" class="btn-floating red"><i class="material-icons">delete</i></a></td>
                 </tr>
+                <?php
+                }
+                ?>
             </tbody>
         </table>
         <br>
