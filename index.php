@@ -20,16 +20,42 @@ require_once './includes/msg.php';
                 <?php
                 $sql = 'select * from clientes';
                 $result = mysqli_query($connect, $sql);
-                while ($data = mysqli_fetch_array($result)) {
+                if (mysqli_num_rows($result) > 0) {
+                    while ($data = mysqli_fetch_array($result)) {
                 ?>
-                <tr>
-                    <td><?php echo $data['nome']; ?></td>
-                    <td><?php echo $data['sobrenome']; ?></td>
-                    <td><?php echo $data['email']; ?></td>
-                    <td><?php echo $data['idade']; ?></td>
-                    <td><a href="editar.php?id=<?php echo $data['id']; ?>" class="btn-floating orange"><i class="material-icons">edit</i></a></td>
-                    <td><a href="" class="btn-floating red"><i class="material-icons">delete</i></a></td>
-                </tr>
+                        <tr>
+                            <td><?php echo $data['nome']; ?></td>
+                            <td><?php echo $data['sobrenome']; ?></td>
+                            <td><?php echo $data['email']; ?></td>
+                            <td><?php echo $data['idade']; ?></td>
+                            <td><a href="editar.php?id=<?php echo $data['id']; ?>" class="btn-floating orange"><i class="material-icons">edit</i></a></td>
+                            <td><a href="#modal<?php echo $data['id']; ?>" class="btn-floating red modal-trigger"><i class="material-icons">delete</i></a></td>
+                            <!-- Modal Structure -->
+                            <div id="modal<?php echo $data['id']; ?>" class="modal">
+                                <div class="modal-content">
+                                    <h4>Opa!</h4>
+                                    <p>Tem certeza que deseja excluir esse cliente?</p>
+                                </div>
+                                <div class="modal-footer">
+                                    <form action="./php-action/delete.php" method="post">
+                                        <input type="hidden" name="id" value="<?php echo $data['id']; ?>">
+                                        <button type="submit" name="btn-deletar" class="btn red">Sim, quero deletar</button>
+                                        <a href="#!" class="modal-close waves-effect waves-green btn-flat">Cancelar</a>
+                                    </form>
+                                </div>
+                            </div>
+
+                        </tr>
+                    <?php
+                    }
+                } else {
+                    ?>
+                    <tr>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                    </tr>
                 <?php
                 }
                 ?>
