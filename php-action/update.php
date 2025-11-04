@@ -8,7 +8,7 @@ if (isset($_POST['btn-editar'])) {
     $email = mysqli_escape_string($connect, $_POST['email']);
     $age = mysqli_escape_string($connect, $_POST['age']);
     $id = mysqli_escape_string($connect, $_POST['id']);
-    
+
     $sql = "update clientes set nome = '$name', sobrenome = '$lastname', email = '$email', idade = '$age' where id = '$id'";
 
     if (mysqli_query($connect, $sql)) {
@@ -19,5 +19,3 @@ if (isset($_POST['btn-editar'])) {
         header('Location: ../index.php');
     }
 }
-
-?>

@@ -15,19 +15,19 @@ if (isset($_GET['id'])) {
         <form action="./php-action/update.php" method="post">
             <input type="hidden" name="id" value="<?php echo $data['id']; ?>">
             <div class="input-field col s12">
-                <input type="text" name="name" id="name" value="<?php echo $data['nome'] ;?>">
+                <input type="text" name="name" id="name" value="<?php echo $data['nome']; ?>">
                 <label for="name">Nome</label>
             </div>
             <div class="input-field col s12">
-                <input type="text" name="lastname" id="lastname" value="<?php echo $data['sobrenome'] ;?>">
+                <input type="text" name="lastname" id="lastname" value="<?php echo $data['sobrenome']; ?>">
                 <label for="lastname">Sobrenome</label>
             </div>
             <div class="input-field col s12">
-                <input type="text" name="email" id="email" value="<?php echo $data['email'] ;?>">
+                <input type="text" name="email" id="email" value="<?php echo $data['email']; ?>">
                 <label for="email">Email</label>
             </div>
             <div class="input-field col s12">
-                <input type="text" name="age" id="age" value="<?php echo $data['idade'] ;?>">
+                <input type="text" name="age" id="age" value="<?php echo $data['idade']; ?>">
                 <label for="age">Idade</label>
             </div>
             <button type="submit" name="btn-editar" class="btn">Atualizar</button>

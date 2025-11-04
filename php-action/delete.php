@@ -4,7 +4,7 @@ require_once './db-connect.php';
 
 if (isset($_POST['btn-deletar'])) {
     $id = mysqli_escape_string($connect, $_POST['id']);
-    
+
     $sql = "delete from clientes where id = '$id'";
 
     if (mysqli_query($connect, $sql)) {
@@ -15,5 +15,3 @@ if (isset($_POST['btn-deletar'])) {
         header('Location: ../index.php');
     }
 }
-
-?>
