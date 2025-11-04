@@ -27,7 +27,7 @@ require_once './includes/msg.php';
                     <td><?php echo $data['sobrenome']; ?></td>
                     <td><?php echo $data['email']; ?></td>
                     <td><?php echo $data['idade']; ?></td>
-                    <td><a href="" class="btn-floating orange"><i class="material-icons">edit</i></a></td>
+                    <td><a href="editar.php?id=<?php echo $data['id']; ?>" class="btn-floating orange"><i class="material-icons">edit</i></a></td>
                     <td><a href="" class="btn-floating red"><i class="material-icons">delete</i></a></td>
                 </tr>
                 <?php
