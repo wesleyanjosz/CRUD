@@ -23,6 +23,7 @@ include_once './includes/header.php';
                 <label for="age">Idade</label>
             </div>
             <button type="submit" class="btn">Cadastrar</button>
+            <button type="submit" class="btn green">Lista de clientes</button>
         </form>
     </div>
 </div>
